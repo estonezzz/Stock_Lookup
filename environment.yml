@@ -1,0 +1,12 @@
+name: new_app_env #Environment name
+dependencies:
+  - python=3.6
+  - pip:
+    - pandas
+    - bokeh
+    - dill
+    - flask
+    - jinja2
+    - pip
+    - simplejson
+    - gunicorn # for app deployment
