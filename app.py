@@ -82,4 +82,4 @@ def chart():
     return render_template('chart.html',the_div=div, the_script=script)
 
 if __name__ == '__main__':
-  app.run(port=33507, debug = True)
+  app.run()
