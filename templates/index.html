@@ -2,28 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Skeleton application demoing Heroku and Flask integration.">
-    <meta name="author" content="@gotoariel">
-    <!-- <link rel="icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Wilkommen, bienvenue, and welcome to Heroku!</title>
+    <title>Stock Data Lookup</title>
+	<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #333;
+}
 
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+</style>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
+          <ul> 
+			<li><a class="active" href="/index">Stock Lookup App</a></li>
+            <li><a target="_blank" href="https://www.thedataincubator.com/12day.html">TDI 12-Day Program</a></li>
+			<li><a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage API </a></li>			
+            <li><a href="/about">About</a></li>
+          </ul>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-left">
-          <h2>Hello, World!</h2>
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a target="_blank" href="https://www.heroku.com/">Heroku</a></li>
-            <li><a target="_blank" href="http://flask.pocoo.org/">Flask</a></li>
-            <li><a target="_blank" href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a></li>
-            <li><a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></li>
-          </ul>
+          <h5 style="color:red">{{message}}</h5>
+		  <form method="POST">
+			  <h4>Stock ticker:</h4>
+			  <input type="text" id="ticker" name="ticker" value="AAPL"><br><br><br>
+			  <h4>Time period from today's date:</h4>
+			  <input type="radio" id="30day" name="Period" value=30 checked>
+			  <label for="30day">30 days</label><br>
+			  <input type="radio" id="90day" name="Period" value=90>
+			  <label for="90day">90 days</label><br>
+			  <input type="radio" id="1year" name="Period" value=254>
+			  <label for="1year">1 year</label><br><br><br>
+			  <h4>Market price type:</h4>
+			  <input type="radio" id="cl_price" name="Price_type" value="cl-price">
+			  <label for="cl-price">Close Price</label><br>
+			  <input type="radio" id="adj_price" name="Price_type" value="adj_price" checked>
+			  <label for="adj_price">Adjusted Close Price</label><br><br>
+			  <input type="submit" value="Submit">
+			 </form>
         </div>
       </div>
     </div>
