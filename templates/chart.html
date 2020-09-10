@@ -33,25 +33,22 @@ li a.active {
   background-color: #4CAF50;
 }
 </style>
+
 	<ul> 
 			<li><a class="active" href="/">Stock Lookup App</a></li>
             <li><a target="_blank" href="https://www.thedataincubator.com/12day.html">TDI 12-Day Program</a></li>
-			<li><a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage API </a></li>
-			
+			<li><a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage API </a></li>			
             <li><a href="/about">About</a></li>
    </ul>
 	
-    <link href="//cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.css" rel="stylesheet">
-    <link href="//cdn.pydata.org/bokeh/release/bokeh-widgets-2.2.1.min.css" rel="stylesheet">
-	<script src="http://cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.js"></script>
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.2.1.min.js"></script>
+    <link rel="stylesheet" href="//cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.css">
+	<script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.js"></script>
+		    {{ the_script|safe }}
   </head>
   <body>
-  <div class="container">
+  <div class=page>
 
-    {{ the_div|safe }}
-
-    {{ the_script|safe }}
+			{{ the_div|safe }}
 	    
   </div>
   </body>
