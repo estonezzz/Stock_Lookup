@@ -41,7 +41,7 @@ li a.active {
   </head>
   <body>
           <ul> 
-			<li><a class="active" href="/index">Stock Lookup App</a></li>
+			<li><a class="active" href="/">Stock Lookup App</a></li>
             <li><a target="_blank" href="https://www.thedataincubator.com/12day.html">TDI 12-Day Program</a></li>
 			<li><a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage API </a></li>			
             <li><a href="/about">About</a></li>
@@ -50,7 +50,7 @@ li a.active {
       <div class="row">
         <div class="col-lg-12 text-left">
           <h5 style="color:red">{{message}}</h5>
-		  <form method="POST">
+		  <form action="/chart" method="POST">
 			  <h4>Stock ticker:</h4>
 			  <input type="text" id="ticker" name="ticker" value="AAPL"><br><br><br>
 			  <h4>Time period from today's date:</h4>

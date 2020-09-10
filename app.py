@@ -46,7 +46,7 @@ def Plotting(df, ticker, Price_type, Period):
     p.legend.location = "top_left"
     return p
 
-@app.route('/index', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'GET':
         return render_template('index.html', message = "")
@@ -74,11 +74,20 @@ def about():
 @app.route('/chart', methods=['GET','POST'])
 def chart():
     #print(app.vars)
+    app.vars['ticker'] = request.form['ticker']
+    app.vars['Period'] = request.form['Period']
+    #print(app.vars['ticker'])
+    if request.form['Price_type'] == 'cl-price':
+        app.vars['Price'] = False
+    else: app.vars['Price'] = True 
     json_file = grab_ticker(app.vars['ticker'],app.vars['Price'])
+    if 'Error Message' in json_file.keys():
+        message = "Double check you entered correct ticker"
+        return render_template('index.html', message = message)
     df = jsonToPandas(json_file)
     plot = Plotting(df,app.vars['ticker'],app.vars['Price'],app.vars['Period'])
     script, div = components(plot)
-
+    
     return render_template('chart.html',the_div=div, the_script=script)
 
 if __name__ == '__main__':
