@@ -8,5 +8,4 @@ dependencies:
     - flask
     - jinja2
     - pip
-    - simplejson
     - gunicorn # for app deployment

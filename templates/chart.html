@@ -39,21 +39,20 @@ li a.active {
 			<li><a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage API </a></li>
 			
             <li><a href="/about">About</a></li>
-          </ul>
+   </ul>
 	
     <link href="//cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.css" rel="stylesheet">
     <link href="//cdn.pydata.org/bokeh/release/bokeh-widgets-2.2.1.min.css" rel="stylesheet">
+	<script src="http://cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.2.1.min.js"></script>
   </head>
   <body>
   <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-left">
 
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-2.2.1.min.js"></script>
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.2.1.min.js"></script>
+    {{ the_div|safe }}
 
-	    </div>
-      </div>
+    {{ the_script|safe }}
+	    
   </div>
   </body>
 </html>
